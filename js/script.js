@@ -39,6 +39,11 @@ console.log(transformCamelCase("TEST pour voir le camelcase"));
 // -----------------------------------
 console.log("2/ Implémentez une fonction qui retourne le plus grand mot d'un texte.");
 
+/**
+ * Get the longest word from a text.
+ * @param {text} text The text you want to get the largest word from.
+ * @returns {string} The longest word in a text
+ */
 function getLongestWord(text) {
     let maxLength;
     let longestWord = '';
