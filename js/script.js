@@ -41,26 +41,25 @@ console.log("2/ Implémentez une fonction qui retourne le plus grand mot d'un te
 
 /**
  * Get the longest word from a text.
- * @param {text} text The text you want to get the largest word from.
+ * @param {string} text The text you want to get the largest word from.
  * @returns {string} The longest word in a text
  */
 function getLongestWord(text) {
-    let maxLength;
-    let longestWord = '';
-    let textArray = text.split(' ');
-    for (const word of textArray) {
-        if (word.length > maxLength || maxLength === undefined) {
-            maxLength = word.length;
+    let longestWord;
+    for (const word of text.split(' ')) {
+        if (longestWord === undefined || word.length > longestWord.length) {
             longestWord = word
         }
     }
     return longestWord
 }
 
-console.log(getLongestWord("La confiture d'orange amère est une petite pépite de bonheur au réveil."));
+console.log(getLongestWord("La confiture d'orange amère est une petite pépite de saveur au réveil. C'est délicieux sur du bon pain frais."));
 
 // -----------------------------------
 console.log("3/ Implémentez une fonction qui converti un nombre de seconde en un tableau exprimant cette durée en secondes, minutes, heures, jours, semaines et années.");
+
+
 
 console.log();
 
