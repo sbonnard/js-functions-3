@@ -1,12 +1,58 @@
 // -----------------------------------
 console.log("1/ Implémentez une fonction qui transforme un texte en camelCase.");
 
-console.log();
+/**
+ * Turn a string with an upper case
+ * @param {string} - the word to capitalized
+ * @return {string} - capitalized word
+ */
+function capitalize(word) {
+    return word[0].toUpperCase() + word.slice(1).toLowerCase();
+}
+
+/**
+ * Get a text in CamelCase.
+ * @param {string} text - a text.
+ * @returns {string} - Get a text in CamelCase.
+ */
+function transformCamelCase(text) {
+    let words = text.toLowerCase().split(" ");
+    for (let index = 1; index < words.length; index++) {
+        words[index] = words[index][0].toUpperCase() + words[index].slice(1);
+    }
+    return words.join("");
+}
+
+// --------- Short version of the code ------------------
+
+// function transformCamelCase2(text) {
+//     return text
+//         .toLowerCase()
+//         .split(" ")
+//         .map((w, i) => i === 0 ? w : capitalize(w))
+//         .join("");
+// }
+
+console.log(transformCamelCase("TEST pour voir le camelcase"));
+// console.log(transformCamelCase2("TEST pour voir le camelcase"));
 
 // -----------------------------------
-console.log("2/ Implémentez une fonction qui retroune le plus grand mot d'un texte.");
+console.log("2/ Implémentez une fonction qui retourne le plus grand mot d'un texte.");
 
-console.log();
+function getLongestWord(text) {
+    let maxLength;
+    let longestWord = '';
+    let textArray = text.split(' ');
+    for (const word of textArray) {
+        if (word.length > maxLength || maxLength === undefined) {
+            maxLength = word.length;
+            longestWord = word
+        }
+    }
+    return longestWord
+}
+
+console.log(getLongestWord("La confiture d'orange amère est une petite pépite de bonheur au réveil."));
 
 // -----------------------------------
 console.log("3/ Implémentez une fonction qui converti un nombre de seconde en un tableau exprimant cette durée en secondes, minutes, heures, jours, semaines et années.");
@@ -31,7 +77,7 @@ console.log();
 // -----------------------------------
 console.log("7/ Retournez la liste des prenoms des joueurs ci-dessous par ordre de score décroissant.");
 
-const players  = {
+const players = {
     Camille: 88,
     Lola: 125,
     Isaac: 174,
